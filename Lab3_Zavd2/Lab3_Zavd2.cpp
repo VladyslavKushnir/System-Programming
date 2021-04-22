@@ -26,7 +26,7 @@ DWORD WINAPI thread_routine(LPVOID lpParam)
             Sleep(1000 * (rand() % 3 + 1));
             printf("Запис %d \n", GetCurrentThreadId());
             file = CreateFileA(
-                "lab05_file.txt",
+                "lab03_file.txt",
                 FILE_GENERIC_WRITE,
                 FILE_SHARE_WRITE,
                 NULL,
@@ -48,7 +48,7 @@ DWORD WINAPI thread_routine(LPVOID lpParam)
             printf("Закiнчив работу: %d\n", GetCurrentThreadId());
 
             if (!ReleaseSemaphore(semaphore, 1, NULL)) {
-                printf("Семфор не створено! %d\n", GetLastError());
+                printf("Семфор зброшено! %d\n", GetLastError());
             }
         }
     }
@@ -62,7 +62,7 @@ int main()
     cout << "Кiлькiсть потокiв: ";
     cin >> count;
     HANDLE* h_threads = new HANDLE[count];
-    semaphore = CreateSemaphore(NULL,2,2,TEXT("Lab05_Zavd2"));
+    semaphore = CreateSemaphore(NULL,5,5,TEXT("Lab03_Zavd2"));
     if (semaphore == NULL)
     {
         printf("Помилка Mutex%d\n", GetLastError());
