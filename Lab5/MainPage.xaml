@@ -1,0 +1,40 @@
+﻿<Page
+    x:Class="Lab5.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Lab5"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    
+    Width="600" Height="400"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Hub Name="MyHub" Header="Стартова сторінка (HUB CONTROL)" SectionHeaderClick="Hub_SectionHeaderClick" >
+        <HubSection Header="Конвертор" Width="300" Name="Conv" IsHeaderInteractive="True" Background="AliceBlue">
+            <DataTemplate>
+                <Grid Height="200">
+                    <TextBlock TextWrapping="Wrap" Margin="0,15,0,147" HorizontalAlignment="Left">
+                         Перетворення з метричних одиниць довжини в фути, дюйми, ярди і милі.
+                    </TextBlock>
+                    <TextBlock TextWrapping="Wrap" Margin="0,55,0,107" HorizontalAlignment="Right">
+                         Перетворення з кг, гр, т, центнерів в фунти, унції. 
+                     </TextBlock>
+                    <TextBlock TextWrapping="Wrap" Margin="0,95,0,17" HorizontalAlignment="Left">
+                         Перетворення з куб.метров, куб.см., літрів в пінти, галони.
+                    </TextBlock>
+
+                </Grid>
+            </DataTemplate>
+        </HubSection>
+        <HubSection Header="Про розробника" Name="About" Width="300" IsHeaderInteractive="True" Background="LightGray">
+            <DataTemplate>
+                <Grid>
+                    <TextBlock TextWrapping="Wrap" Margin="0,15,0,147" HorizontalAlignment="Center">
+                        Сторінка з інформацією про розробника
+                    </TextBlock>
+                </Grid>
+            </DataTemplate>
+        </HubSection>
+    </Hub>
+</Page>

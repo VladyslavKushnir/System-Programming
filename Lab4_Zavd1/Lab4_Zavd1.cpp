@@ -6,6 +6,8 @@
 
 using namespace std;
 
+LPCSTR unpackCommand = "7z.exe e ";
+LPCSTR packCommand = "7z.exe a -tzip ";
 
 void UnpackFiles(LPSTR unpackFile, LPSTR resultFile);
 void PackFiles(LPSTR unpackFile, LPSTR resultFile);
@@ -122,7 +124,7 @@ void PackFiles(LPSTR packFile, LPSTR resultFile)
 
 	LPSTR commandLine = new CHAR[MAX_PATH];
 	ZeroMemory(commandLine, MAX_PATH);
-	strncpy(commandLine, "7z.exe a -tzip ", MAX_PATH - strlen(commandLine));
+	strncpy(commandLine, packCommand, MAX_PATH - strlen(commandLine));
 	strncat(commandLine, resultFile, MAX_PATH - strlen(commandLine));
 
 	strncat(commandLine, " ", MAX_PATH - strlen(commandLine));
